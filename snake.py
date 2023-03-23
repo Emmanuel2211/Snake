@@ -4,6 +4,7 @@ Cambios:
 Cada vez que se corra el juego, la víbora y la comida deberán tener colores diferentes entre sí, 
 pero al azar, de una serie de 5 diferentes colores, excepto el rojo.
 
+Editado por Leonardo López - A01653931
 Editado por Emmanuel Cruz
 """
 
@@ -15,6 +16,8 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+
+ 
 snake_colors = ["#00FCFC","#00FC32","#FC6F00","#F8FC00","#BBFC00"]
 food_colors = ["#007709","#FC0076","#AC00FC","#2E00FC","#FC00DD"]
 s_rng = snake_colors[randrange(0,4)]
@@ -42,6 +45,10 @@ def move():
         return
 
     snake.append(head)
+
+    if randrange(10) == 0:
+        food.x = randrange(-15, 15) * 10
+        food.y = randrange(-15, 15) * 10 
 
     if head == food:
         print('Snake:', len(snake))
