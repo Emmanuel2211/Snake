@@ -1,13 +1,10 @@
 """Snake, classic arcade game.
 
-Exercises
+Cambios:
+Cada vez que se corra el juego, la víbora y la comida deberán tener colores diferentes entre sí, 
+pero al azar, de una serie de 5 diferentes colores, excepto el rojo.
 
-1. How do you make the snake faster or slower?
-2. How can you make the snake go around the edges?
-3. How would you move the food?
-4. Change the snake to respond to mouse clicks.
-
-Editado por Leonardo López
+Editado por Emmanuel Cruz
 """
 
 from random import randrange
@@ -18,7 +15,10 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-
+snake_colors = ["#00FCFC","#00FC32","#FC6F00","#F8FC00","#BBFC00"]
+food_colors = ["#007709","#FC0076","#AC00FC","#2E00FC","#FC00DD"]
+s_rng = snake_colors[randrange(0,4)]
+f_rng = food_colors[randrange(0,4)]
 
 def change(x, y):
     """Change snake direction."""
@@ -53,9 +53,9 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, s_rng)
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, f_rng)
     update()
     ontimer(move, 100)
 
