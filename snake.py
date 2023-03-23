@@ -7,7 +7,7 @@ Exercises
 3. How would you move the food?
 4. Change the snake to respond to mouse clicks.
 
-Editado por Leonardo López
+Editado por Leonardo López - A01653931
 """
 
 from random import randrange
@@ -18,8 +18,7 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-
-
+ 
 def change(x, y):
     """Change snake direction."""
     aim.x = x
@@ -42,6 +41,10 @@ def move():
         return
 
     snake.append(head)
+
+    if randrange(10) == 0:
+        food.x = randrange(-15, 15) * 10
+        food.y = randrange(-15, 15) * 10 
 
     if head == food:
         print('Snake:', len(snake))
