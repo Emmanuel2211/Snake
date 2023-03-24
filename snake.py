@@ -6,6 +6,7 @@ pero al azar, de una serie de 5 diferentes colores, excepto el rojo.
 
 Editado por Leonardo López - A01653931
 Editado por Emmanuel Cruz
+            David Alonso Chang Ortega - A01658631
 """
 
 from random import randrange
