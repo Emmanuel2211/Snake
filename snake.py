@@ -5,6 +5,7 @@ Cada vez que se corra el juego, la víbora y la comida deberán tener colores di
 pero al azar, de una serie de 5 diferentes colores, excepto el rojo.
 
 Editado por Emmanuel Cruz
+            David Alonso Chang Ortega - A01658631
 """
 
 from random import randrange
